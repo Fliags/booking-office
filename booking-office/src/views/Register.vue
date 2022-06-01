@@ -40,27 +40,24 @@
                     Kata Sandi
                 </v-card-text>
                 <v-text-field
-                 :append-icon="show3 ? 'mdi-eye' : 'mdi-eye-off'"
-                 :type="show3 ? 'text' : 'password'"
-                 name="input-10-2"
+                 :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
+                 :type="showPassword ? 'text' : 'password'"
                  outlined
                  placeholder="Masukan kata sandi anda"
                  class="body-regular-3"
-                 @click:append="show3 = !show3"
+                 @click:append="showPassword = !showPassword"
                 />
 
                 <v-card-text class="pa-0 body-regular-2">
                     Ulangi Kata Sandi
                 </v-card-text>
                 <v-text-field
-                 :append-icon="show3 ? 'mdi-eye' : 'mdi-eye-off'"
-                 :type="show3 ? 'text' : 'password'"
-                 name="input-10-2"
-                 value=""
+                 :append-icon="showPassword2 ? 'mdi-eye' : 'mdi-eye-off'"
+                 :type="showPassword2 ? 'text' : 'password'"
                  outlined
                  placeholder="Ketik ulang kata sandi anda"
                  class="body-regular-3"
-                 @click:append="show3 = !show3"
+                 @click:append="showPassword2 = !showPassword2"
                 />
 
                 <v-row>
@@ -107,7 +104,13 @@
 
 <script>
 export default {
-    name: "RegisterPage"
+    name: "RegisterPage",
+    data() {
+        return {
+            showPassword : false,
+            showPassword2 : false
+        }
+    },
 }
 </script>
 
