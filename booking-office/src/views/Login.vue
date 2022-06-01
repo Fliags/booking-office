@@ -23,13 +23,11 @@
                 </v-card-text>
                 <v-text-field
                  :append-icon="show3 ? 'mdi-eye' : 'mdi-eye-off'"
-                 :type="show3 ? 'text' : 'password'"
-                 name="input-10-2"
-                 value=""
+                 :type="showPassword ? 'text' : 'password'"
                  outlined
                  placeholder="Masukan kata sandi anda"
                  class="body-regular-3"
-                 @click:append="show3 = !show3"
+                 @click:append="showPassword = !showPassword"
                 />
 
                 <v-row>
@@ -78,7 +76,12 @@
 
 <script>
 export default {
-    name: 'LoginPage'
+    name: 'LoginPage',
+    data() {
+        return {
+            showPassword : false
+        }
+    },
 }
 </script>
 
